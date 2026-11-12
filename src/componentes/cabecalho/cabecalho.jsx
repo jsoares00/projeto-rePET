@@ -2,7 +2,11 @@ import './Cabecalho.css'
 
 function Cabecalho() {
     return <header className='Cabecalho_root'>
-        <img src="https://i.pinimg.com/736x/ce/5b/bd/ce5bbdf4593c45f534379a5aa7f9c776.jpg" alt="" className='img1'/>
+        <img  src="https://i.pinimg.com/736x/ce/5b/bd/ce5bbdf4593c45f534379a5aa7f9c776.jpg"
+        style={{
+          width: "50px",
+          height: 40,
+        }}/>
         <h4>rePET</h4>
     </header>
 }
