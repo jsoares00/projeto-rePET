@@ -1,0 +1,20 @@
+.Cabecalho_root {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 8px;
+}
+
+.Cabecalho_root .img1 {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+    display: block;
+}
+
+.Cabecalho_root h4 {
+    color: white;
+    margin: 0;
+}
