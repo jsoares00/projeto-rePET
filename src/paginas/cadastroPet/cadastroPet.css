@@ -1,0 +1,105 @@
+.CadastroPet {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 25px 110px;
+    color: #3A455C;
+}
+
+.CadastroPet_topo {
+    margin-bottom: 30px;
+}
+
+.CadastroPet_topo h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.CadastroPet_topo p {
+    color: #8B8C8F;
+}
+
+.CadastroPet_formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    background: #F3F6FF;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.CadastroPet_campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.CadastroPet_campo label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.CadastroPet_campo input,
+.CadastroPet_campo select,
+.CadastroPet_campo textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #DCE3F2;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #3A455C;
+    font: inherit;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.CadastroPet_campo input:focus,
+.CadastroPet_campo select:focus,
+.CadastroPet_campo textarea:focus {
+    border-color: #3B7BFF;
+}
+
+.CadastroPet_completo {
+    grid-column: span 2;
+}
+
+.CadastroPet_acoes {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.CadastroPet_acoes button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.CadastroPet_acoes button:first-child {
+    background: #FFFFFF;
+    color: #3A455C;
+}
+
+.CadastroPet_acoes button:last-child {
+    background: #0053FF;
+    color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+    .CadastroPet_formulario {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .CadastroPet_completo,
+    .CadastroPet_acoes {
+        grid-column: span 1;
+    }
+
+    .CadastroPet_acoes {
+        flex-direction: column-reverse;
+    }
+}

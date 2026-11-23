@@ -1,16 +1,27 @@
+
 import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
 import Cabecalho from './componentes/cabecalho/cabecalho'
 import Principal from './componentes/principal/principal'
-import Rodape from './componentes/rodape/rodape'
-
+import CadastroPet from './paginas/CadastroPet/CadastroPet'
+import ListaPets from './paginas/listaPet/listaPET'
+import MenuInferior from './componentes/menuInferior/menuInferior'
 
 function App() {
   return (
-    <div>
-      <Cabecalho/>
-      <Principal/>
-      <Rodape/>
-    </div>
+    <BrowserRouter>
+       <div className='app'>
+        <Cabecalho />
+          <Routes>
+          <Route path="/" element={<Principal />} />
+          <Route path="/cadastro-pet" element={<CadastroPet />} />
+          <Route path="/lista-pets" element={<ListaPets/>} />
+          <Route path="/cadastro-pet/:id" element={<CadastroPet />} />
+          </Routes>
+        <MenuInferior/>
+       </div>
+    </BrowserRouter>
   )
 }
 
