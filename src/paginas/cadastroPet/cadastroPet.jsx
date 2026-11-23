@@ -8,7 +8,7 @@ import {
     atualizarPet
 } from '../../services/petService'
 
-import './CadastroPet.css'
+import './cadastroPet.css'
 
 function CadastroPet() {
     const navigate = useNavigate()

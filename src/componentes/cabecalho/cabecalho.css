@@ -1,7 +1,14 @@
 .Cabecalho_root {
-    background-color: rgb(168, 0, 0);
+    width: 100%;
+    height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 8px;
+    padding: 0 25px;
+    background-color: #250069;
+}
+
+.Cabecalho_logo {
+    width: 12px;
+    height: 20px;
+    object-fit: contain;
 }

@@ -1,4 +1,4 @@
-import "./BotaoCustomizado.css";
+import "./botaoCustomizado.css";
 
 function BotaoCustomizado(props) {
   const classes = ["BotaoCustomizado_root"];

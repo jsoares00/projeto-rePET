@@ -1,8 +1,14 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { listarPets, excluirPet } from '../../services/petService.js'
-import './listaPets.css'
+import { Plus } from 'lucide-react'
+
+import {
+    listarPets,
+    excluirPet
+} from '../../services/petService'
+
+import './ListaPets.css'
 
 function ListaPets() {
     const [pets, setPets] = useState([])
@@ -16,11 +22,7 @@ function ListaPets() {
     }, [])
 
     function removerPet(id) {
-        const confirmar = window.confirm(
-            'Deseja realmente excluir este pet?'
-        )
-
-        if (confirmar) {
+        if (window.confirm('Deseja realmente excluir este pet?')) {
             excluirPet(id)
             carregarPets()
         }
@@ -28,30 +30,38 @@ function ListaPets() {
 
     return (
         <main className="ListaPets">
-            <header className="ListaPets_topo">
-                <div>
-                    <h1>Meus animais</h1>
-                    <p>Gerencie os animais cadastrados no rePET.</p>
-                </div>
 
-                <Link to="/cadastro-pet" className="ListaPets_botao">
-                    + Cadastrar pet
-                </Link>
+            <header className="ListaPets_topo">
+                <span className="ListaPets_marca">rePET</span>
+
+                <h1>Encontre seu novo companheiro.</h1>
+
+                <p>Conheça os animais cadastrados em nosso espaço.</p>
             </header>
 
-            {pets.length === 0 ? (
-                <section className="ListaPets_vazio">
-                    <h2>Nenhum pet cadastrado ainda.</h2>
-                    <p>Comece cadastrando seu primeiro animal!</p>
+            <section className="ListaPets_titulo">
+                <div>
+                    <h2>Nossos Pets</h2>
+                    <p>{pets.length} animais cadastrados</p>
+                </div>
 
-                    <Link to="/cadastro-pet">
-                        Cadastrar primeiro pet
-                    </Link>
-                </section>
+                <Link to="/cadastro-pet" className="ListaPets_adicionar">
+                    <Plus size={19} />
+                    Cadastrar
+                </Link>
+            </section>
+
+            {pets.length === 0 ? (
+                <div className="ListaPets_vazio">
+                    <span>🐾</span>
+                    <h3>Nenhum animal cadastrado</h3>
+                    <p>Cadastre o primeiro pet para começar!</p>
+                </div>
             ) : (
                 <section className="ListaPets_grade">
                     {pets.map((pet) => (
                         <article className="ListaPets_card" key={pet.id}>
+
                             <div className="ListaPets_foto">
                                 {pet.foto ? (
                                     <img src={pet.foto} alt={pet.nome} />
@@ -61,9 +71,17 @@ function ListaPets() {
                             </div>
 
                             <div className="ListaPets_informacoes">
-                                <h2>{pet.nome}</h2>
-                                <p>{pet.especie} • {pet.raca}</p>
-                                <p>{pet.sexo} • {pet.porte}</p>
+                                <h3>{pet.nome}</h3>
+
+                                <p>{pet.especie} • {pet.raca || 'Raça não informada'}</p>
+
+                                <p>{pet.sexo} • Porte {pet.porte}</p>
+
+                                {pet.descricao && (
+                                    <p className="ListaPets_descricao">
+                                        {pet.descricao}
+                                    </p>
+                                )}
 
                                 <div className="ListaPets_acoes">
                                     <Link to={`/cadastro-pet/${pet.id}`}>
@@ -75,11 +93,11 @@ function ListaPets() {
                                     </button>
                                 </div>
                             </div>
+
                         </article>
                     ))}
                 </section>
             )}
-                      
 
         </main>
     )
