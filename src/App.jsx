@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<ListaPets />} />
           <Route path="/cadastro-pet" element={<CadastroPet />} />
           <Route path="/lista-pets" element={<ListaPets/>} />
-          <Route path="/cadastro-pet/:id" element={<CadastroPet />} />
+          <Route path="/cadastro-pet/:id" element={<Cadgit astroPet />} />
           </Routes>
         <MenuInferior/>
        </div>
