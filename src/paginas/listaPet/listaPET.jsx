@@ -8,7 +8,7 @@ import {
     excluirPet
 } from '../../services/petService'
 
-import './ListaPets.css'
+import './listaPets.css'
 
 function ListaPets() {
     const [pets, setPets] = useState([])
